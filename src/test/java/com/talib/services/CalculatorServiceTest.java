@@ -14,6 +14,12 @@ public class CalculatorServiceTest {
         System.out.println("Start testing: " + new Date());
     }
 
+    @Before
+    public void beforeEach() {
+        System.out.println("before each test case");
+        counter = 0;
+    }
+
     // Test method for addTwoNumbers
     @Test
     public void addTwoNumbersTest() {
@@ -29,11 +35,13 @@ public class CalculatorServiceTest {
         Assert.assertEquals(expectedResult, actualResult);
     }
 
-    @Test
-    public void sumAnyNumbersTest() {
+    @Test(timeout = 2000)
+    public void sumAnyNumbersTest() throws InterruptedException {
         for (int i = 0; i < 200; i++) {
             counter += i;
         }
+
+//        Thread.sleep(3000);
 
         System.out.println("counter = " + counter);
 
