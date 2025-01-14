@@ -8,6 +8,12 @@ public class CalculatorServiceTest {
 
     int counter = 0;
 
+    @BeforeClass
+    public static void init() {
+        System.out.println("Before start testing");
+        System.out.println("Start testing: " + new Date());
+    }
+
     // Test method for addTwoNumbers
     @Test
     public void addTwoNumbersTest() {
@@ -34,5 +40,11 @@ public class CalculatorServiceTest {
         int actualResult = CalculatorService.sumAnyNumbers(4, 6, 8, 2);
         int expectedResult = 20;
         Assert.assertEquals(expectedResult, actualResult);
+    }
+
+    @AfterClass
+    public static void cleanUp() {
+        System.out.println("After completing all test");
+        System.out.println("Testing done: " + new Date());
     }
 }
