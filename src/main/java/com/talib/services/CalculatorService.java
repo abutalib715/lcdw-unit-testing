@@ -17,11 +17,11 @@ public class CalculatorService {
         return a / b;
     }
 
-    public static int subAnyNumbers(int... numbers) {
+    public static int sumAnyNumbers(int ...numbers) {
         int sum = 0;
 
         for (int n : numbers) {
-            return sum += n;
+            sum += n;
         }
 
         return sum;
