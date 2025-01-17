@@ -8,10 +8,13 @@ import jakarta.persistence.Id;
 @Entity
 public class Person {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private String address;
+
+    public Person() {
+
+    }
 
     public Integer getId() {
         return id;
@@ -34,6 +37,12 @@ public class Person {
     }
 
     public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public Person(Integer id, String name, String address) {
+        this.id = id;
+        this.name = name;
         this.address = address;
     }
 }
